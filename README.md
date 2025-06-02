@@ -7,20 +7,7 @@ Requirements:
 - ISCDtoolbox (medit, advection, mshdist): https://github.com/iscdtoolbox](https://github.com/ISCDtoolbox/Mshdist, https://github.com/ISCDtoolbox/Advection, https://github.com/ISCDtoolbox/Medit
 
   Once you have everything installed, you can run the test cases by doing:
-  python HETube.py
-
-  Note that the simulations were run on a cluster using 64 processors, you can change the number of processors in the line "N=64"
-  and then modify the lines
-
-  shutil.copyfile(output+'/THot_64_0000_00.vtu',output+'/THot_'+itf+'.vtu')
-  
-  shutil.copyfile(output+'/TCold_64_0000_00.vtu',output+'/TCold_'+itf+'.vtu')
-
-  replacing 64 by the new number of lines and the 00.vtu by the new digit, for example if you use N=8, then it should read:
-
-  shutil.copyfile(output+'/THot_8_0000_0.vtu',output+'/THot_'+itf+'.vtu')
-  
-  shutil.copyfile(output+'/TCold_8_0000_0.vtu',output+'/TCold_'+itf+'.vtu')
+  python IsolantCylinder.py
 
 The base used codes are cited in our article:
 F. Caubet, C. Conca, M. Dambrine, and R. Zelada. How to insulate a pipe?.
