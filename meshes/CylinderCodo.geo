@@ -61,11 +61,11 @@ Curve Loop(2) = {22, 23, 24, 25};
 //+
 Curve Loop(3) = {16};
 //+
-Plane Surface(1) = {3};
+Plane Surface(2) = {3};
 //+
 Curve Loop(4) = {15};
 //+
-Plane Surface(2) = {4};
+Plane Surface(1) = {4};
 //+
 Curve Loop(5) = {16};
 //+
