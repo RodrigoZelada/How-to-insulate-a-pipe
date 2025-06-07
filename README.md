@@ -6,8 +6,14 @@ Requirements:
 - python >= 3.8, with pymedit, pyfreefem, nullspace_optimizer: https://gitlab.com/florian.feppon/pyfreefem, https://gitlab.com/florian.feppon/pymedit, https://gitlab.com/florian.feppon/null-space-optimizer
 - ISCDtoolbox (medit, advection, mshdist): https://github.com/iscdtoolbox](https://github.com/ISCDtoolbox/Mshdist, https://github.com/ISCDtoolbox/Advection, https://github.com/ISCDtoolbox/Medit
 
-  Once you have everything installed, you can run the test cases by doing:
+  Once you have installed everything, you have to compile the C++ code by doing:
+
+  make MatrixBinaryPetsc
+
+  and then, you can run the test cases by doing:
+  
   python IsolantCylinder.py
+  (or the others .py files)
 
 The base used codes are cited in our article:
 F. Caubet, C. Conca, M. Dambrine, and R. Zelada. How to insulate a pipe?.
