@@ -15,5 +15,5 @@ Requirements:
   python IsolantCylinder.py
   (or the others .py files)
 
-The base used codes are cited in our article:
+The base codes used are cited in our article:
 F. Caubet, C. Conca, M. Dambrine, and R. Zelada. How to insulate a pipe?.
