@@ -1,0 +1,19 @@
+load "msh3"
+load "iovtk"
+real R=0.1;
+real R2=0.3;
+int n=120;
+border circle(t=0,2*pi){x=R*cos(t);y=R*sin(t);label=100;}
+border circle2(t=0,2*pi){x=R2*cos(t);y=R2*sin(t);}
+mesh Th2D = buildmesh(circle(n)+circle2(n));
+int nz=100;
+real h=1.0;
+mesh3 Th3D = buildlayers(Th2D,nz,zbound=[0.,h]);
+
+int[int] reg=[0,3,1,20];
+int[int] lab=[2,10,0,5];
+Th3D = change(Th3D, region=reg, label=lab);
+Th3D = change(Th3D, flabel = ((label==1) && (z>0.5))  ? 2 : label);
+Th3D = movemesh(Th3D,[z,x+0.5,y+0.5]);
+savemesh(Th3D,"output/ThCoarse.mesh");
+savevtk("output/ThCoarse.vtu",Th3D);
