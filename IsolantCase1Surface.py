@@ -709,7 +709,7 @@ class PureThermalHeatConduction(Optimizable):
         df.to_csv(output+'/G.txt', header=None, index=None, sep=',', mode='a')
 
 
-optSettings = {'dt':2*hmin,'alphaJ':2.,'alphaC':1., 'maxit':500, 'provide_gradient': True, 'maxtrials':1,
+optSettings = {'dt':hmin,'alphaJ':2.,'alphaC':1., 'maxit':150, 'provide_gradient': True, 'maxtrials':1,
               'itnormalisation': 3}
 results=nlspace_solve(PureThermalHeatConduction(), optSettings)
 
