@@ -377,7 +377,7 @@ dOmega1.save(output+'/d1.sol')
 dOmega2.save(output+'/d2.sol')
 dOmega2.save(output+'/d2.o.sol')
 
-#FreeFemRunner([preamble, solve_ns],config,run_dir=output,run_file='solve_ns2.edp',debug=1).execute({'MESH':output+'/Th00.mesh'},ncpu=N)
+FreeFemRunner([preamble, solve_ns],config,run_dir=output,run_file='solve_ns2.edp',debug=1).execute({'MESH':output+'/Th00.mesh'},ncpu=N)
 
 Qlist = []
 
