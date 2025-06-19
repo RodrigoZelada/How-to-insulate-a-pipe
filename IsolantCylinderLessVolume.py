@@ -329,15 +329,22 @@ if (mpirank==0){
 """
 
 interpolate_ns="""
+                mesh3 Thold=readmesh3("$OUTPUT/ThFluid00.mesh");
                 mesh3 ThBox=readmesh3("$MESH");
                 mesh3 Th=trunc(ThBox, ((region == region1) || (region == region2)));
                 savemesh(Th,"$OUTPUT/Th.mesh");
                 mesh3 Thnew=trunc(Th, (region==region1));
 
+                fespace Phold(Thold, [P2,P2,P2,P1]);
                 fespace Phnew(Thnew, [P2,P2,P2,P1]);
+
+                Phold [uxold,uyold,uzold,pold];
                 Phnew [uxnew,uynew,uznew,pnew];
 
-                [uxnew,uynew,uznew,pnew] = [(0.1^2 - (y-0.5)^2 - (z-0.5)^2)/0.01,0.,0.,0.];
+                readData("$OUTPUT/ux00.gp",uxold[]);
+                [uxnew,uynew,uznew,pnew] = [uxold,uyold,uzold,pold];
+                //[uxnew,uynew,uznew,pnew] = [(0.1^2 - (y-0.5)^2 - (z-0.5)^2)/0.01,0.,0.,0.];
+                saveArray("$OUTPUT/ux.gp",uxnew[]);
                 savesol("$OUTPUT/ux.sol",Thnew,uxnew);
                 savesol("$OUTPUT/uy.sol",Thnew,uynew);
                 savesol("$OUTPUT/uz.sol",Thnew,uznew);
@@ -351,7 +358,7 @@ dOmega1.save(output+'/d1.sol')
 dOmega2.save(output+'/d2.sol')
 dOmega2.save(output+'/d2.o.sol')
 
-#FreeFemRunner([preamble, solve_ns],config,run_dir=output,run_file='solve_ns2.edp',debug=1).execute({'MESH':output+'/Th00.mesh'},ncpu=N)
+FreeFemRunner([preamble, solve_ns],config,run_dir=output,run_file='solve_ns2.edp',debug=1).execute({'MESH':output+'/Th00.mesh'},ncpu=N)
 
 Qlist = []
 
