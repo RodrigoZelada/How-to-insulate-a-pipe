@@ -180,7 +180,7 @@ int main(int argc, char ** argv) {
 			}
 		}
 	}
-	cout << "Text = " << Text(0.,0.,0.) << ", J = " << J << ", Q = " << Q << endl;
+
 	ofstream file(output+"/J.gp");
 	file.precision(8);
 	file << J << endl;
