@@ -9,6 +9,7 @@ Requirements:
   Once you have installed everything, you have to compile the C++ code by doing:
 
   make MatrixBinaryPetsc
+  make MatrixBinaryPetscQ
 
   and then, you can run the test cases by doing:
   
