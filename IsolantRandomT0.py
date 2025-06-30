@@ -67,8 +67,8 @@ refermmg = f"""
                 Parameters
                 6
 
-                100 Triangles 5e-3 1e-2 1e-3
-                10 Triangles 5e-3 1e-2 1e-3
+                100 Triangles 1e-2 2e-2 1e-3
+                10 Triangles 1e-2 2e-2 1e-3
                 1 Triangles 5e-3 1e-2 1e-3
                 2 Triangles 5e-3 1e-2 1e-3
                 12 Triangles 5e-3 1e-2 1e-3
